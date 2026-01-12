@@ -2,6 +2,7 @@ package rest.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class WarehouseData {
 	
@@ -9,6 +10,14 @@ public class WarehouseData {
 	private String warehouseName;
 	private String timestamp;
 
+    //Standortdaten
+    private String warehouseAddress;
+    private String warehousePostalCode;
+    private String warehouseCity;
+    private String warehouseCountry;
+
+    //Produkte
+    private List<Product> productData;
 	/**
 	 * Constructor
 	 */
@@ -45,12 +54,51 @@ public class WarehouseData {
 		this.timestamp = timestamp;
 	}
 
+    public String getWarehouseAddress() {
+        return warehouseAddress;
+    }
+
+    public void setWarehouseAddress(String warehouseAddress) {
+        this.warehouseAddress = warehouseAddress;
+    }
+
+    public String getWarehousePostalCode() {
+        return warehousePostalCode;
+    }
+
+    public void setWarehousePostalCode(String warehousePostalCode) {
+        this.warehousePostalCode = warehousePostalCode;
+    }
+
+    public String getWarehouseCity() {
+        return warehouseCity;
+    }
+
+    public void setWarehouseCity(String warehouseCity) {
+        this.warehouseCity = warehouseCity;
+    }
+
+    public String getWarehouseCountry() {
+        return warehouseCountry;
+    }
+
+    public void setWarehouseCountry(String warehouseCountry) {
+        this.warehouseCountry = warehouseCountry;
+    }
+
+    public List<Product> getProductData() {
+        return productData;
+    }
+
+    public void setProductData(List<Product> productData) {
+        this.productData = productData;
+    }
+
 	/**
 	 * Methods
 	 */
 	@Override
 	public String toString() {
-		String info = String.format("Warehouse Info: ID = %s, timestamp = %s", warehouseID, timestamp );
-		return info;
+		return String.format("Warehouse Info: ID = %s, Name = %s, City = %s", warehouseID, warehouseName, warehouseCity );
 	}
 }

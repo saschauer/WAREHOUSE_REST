@@ -16,12 +16,11 @@ public class WarehouseController {
 	
     @RequestMapping("/")
     public String warehouseMain() {
-    	String mainPage = "This is the warehouse application! (DEZSYS_WAREHOUSE_REST) <br/><br/>" +
+    	return "This is the warehouse application! (DEZSYS_WAREHOUSE_REST) <br/><br/>" +
                           "<a href='http://localhost:8080/warehouse/001/json'>Link to warehouse/001/json</a><br/>";
-        return mainPage;
     }
 
-    @RequestMapping(value="/warehouse/{inID}/json", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/warehouse/{inID}/json", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public WarehouseData warehouseData( @PathVariable String inID ) {
         return service.getWarehouseData( inID );
     }

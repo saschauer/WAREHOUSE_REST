@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KONSUM - Consumer</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .controls { border: 1px solid #ccc; padding: 1em; border-radius: 5px; }
+        .controls > div { margin-bottom: 1em; }
+        #product-name-filter { margin-left: 10px; }
+        #location-id-input { margin-left: 10px; }
+        #fetch-data-button { margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Lager-Dashboard</h1>
+
+    <div class="controls">
+        <div>
+            <label for="location-selector"><b>Schritt 1:</b> Standort auswählen:</label>
+            <select id="location-selector">
+                <option value="">-- Bitte wählen --</option>
+                <option value="001">Linz Bahnhof</option>
+                <option value="002">Wien Westbahnhof</option>
+                <option value="003">Unbekannter Standort Test</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="product-name-filter"><b>Schritt 2:</b> Geladene Daten nach Produktname filtern:</label>
+            <input type="text" id="product-name-filter" placeholder="z.B. Bio Apfel...">
+        </div>
+    </div>
+
+    <table id="product-table">
+        <thead>
+        <tr>
+            <th>Produkt ID</th>
+            <th>Produktname</th>
+            <th>Kategorie</th>
+            <th>Menge</th>
+            <th>Einheit</th>
+        </tr>
+        </thead>
+        <tbody id="product-table-body">
+        </tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
